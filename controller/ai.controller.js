@@ -13,8 +13,7 @@ export default class AIController {
             if (!prompt || typeof prompt !== 'string' || prompt.trim() === '') {
                 return res.status(400).json({ message: 'Invalid input. Prompt must be a non-empty string.' });
             }
-            const aiService = new AIService();
-            const aiResponse = await aiService.generateResponse(prompt);
+            const aiResponse = await AIService.generateResponse(prompt);
             return res.json({ response: aiResponse });
 
         } catch (error) {
